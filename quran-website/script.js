@@ -469,7 +469,212 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
+// Counter Animation
+function animateCounters() {
+    const counters = document.querySelectorAll('.counter');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const target = parseInt(counter.getAttribute('data-count'));
+                let current = 0;
+                const increment = target / 100;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    counter.textContent = Math.floor(current).toLocaleString();
+                }, 20);
+                observer.unobserve(counter);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    counters.forEach(counter => observer.observe(counter));
+}
+
+// Enhanced Scroll Performance
+let ticking = false;
+
+function updateScrollEffects() {
+    if (!ticking) {
+        requestAnimationFrame(() => {
+            const scrolled = window.pageYOffset;
+            const navbar = document.getElementById('navbar');
+            
+            // Navbar scroll effect
+            if (scrolled > 100) {
+                navbar.classList.add('bg-white/95', 'shadow-xl');
+                navbar.classList.remove('bg-white/90', 'shadow-lg');
+            } else {
+                navbar.classList.add('bg-white/90', 'shadow-lg');
+                navbar.classList.remove('bg-white/95', 'shadow-xl');
+            }
+            
+            // Parallax effect for hero section
+            const hero = document.querySelector('#home');
+            if (hero && scrolled < window.innerHeight) {
+                const speed = scrolled * 0.3;
+                hero.style.transform = `translateY(${speed}px)`;
+            }
+            
+            ticking = false;
+        });
+        ticking = true;
+    }
+}
+
+// Enhanced scroll event with throttling
+window.addEventListener('scroll', updateScrollEffects, { passive: true });
+
+// Fix text visibility on scroll
+function ensureTextVisibility() {
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+        const container = section.querySelector('.container');
+        if (container) {
+            container.style.position = 'relative';
+            container.style.zIndex = '10';
+        }
+    });
+}
+
+// Enhanced mobile menu with better animations
+function initEnhancedMobileMenu() {
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', function() {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.style.maxHeight = '0';
+                mobileMenu.style.opacity = '0';
+                
+                // Animate in
+                requestAnimationFrame(() => {
+                    mobileMenu.style.transition = 'all 0.3s ease-out';
+                    mobileMenu.style.maxHeight = '400px';
+                    mobileMenu.style.opacity = '1';
+                });
+            } else {
+                mobileMenu.style.transition = 'all 0.3s ease-in';
+                mobileMenu.style.maxHeight = '0';
+                mobileMenu.style.opacity = '0';
+                
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300);
+            }
+            
+            // Animate hamburger icon
+            const svg = mobileMenuBtn.querySelector('svg');
+            svg.style.transform = isHidden ? 'rotate(90deg)' : 'rotate(0deg)';
+        });
+    }
+}
+
+// Enhanced responsive behavior
+function handleResponsiveChanges() {
+    const isMobile = window.innerWidth < 768;
+    const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
+    
+    // Adjust animations based on screen size
+    if (isMobile) {
+        // Disable heavy animations on mobile
+        document.querySelectorAll('.floating-particle').forEach(particle => {
+            particle.style.display = 'none';
+        });
+    } else {
+        document.querySelectorAll('.floating-particle').forEach(particle => {
+            particle.style.display = 'block';
+        });
+    }
+    
+    // Adjust AOS settings based on device
+    if (typeof AOS !== 'undefined') {
+        AOS.refresh();
+    }
+}
+
+// Enhanced image loading with better fallbacks
+function enhanceImageLoading() {
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        if (!img.complete) {
+            img.addEventListener('load', function() {
+                this.style.opacity = '1';
+            });
+            img.addEventListener('error', function() {
+                this.style.opacity = '0.5';
+                console.log('Image failed to load:', this.src);
+            });
+        }
+    });
+}
+
+// Touch gestures for mobile
+function initTouchGestures() {
+    if ('ontouchstart' in window) {
+        let startY = 0;
+        let endY = 0;
+        
+        document.addEventListener('touchstart', function(e) {
+            startY = e.touches[0].clientY;
+        }, { passive: true });
+        
+        document.addEventListener('touchend', function(e) {
+            endY = e.changedTouches[0].clientY;
+            const diff = startY - endY;
+            
+            // Swipe up gesture
+            if (diff > 50) {
+                // Could trigger scroll to next section
+            }
+            // Swipe down gesture
+            else if (diff < -50) {
+                // Could trigger scroll to previous section
+            }
+        }, { passive: true });
+    }
+}
+
+// Performance monitoring
+function initPerformanceMonitoring() {
+    if ('performance' in window) {
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                const perfData = performance.getEntriesByType('navigation')[0];
+                console.log('Page load time:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
+            }, 0);
+        });
+    }
+}
+
 // Initialize all features when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
     console.log('QuranLearn website initialized successfully!');
+    
+    // Initialize enhanced features
+    animateCounters();
+    ensureTextVisibility();
+    initEnhancedMobileMenu();
+    enhanceImageLoading();
+    initTouchGestures();
+    initPerformanceMonitoring();
+    
+    // Handle responsive changes
+    handleResponsiveChanges();
+    window.addEventListener('resize', handleResponsiveChanges);
+    
+    // Re-initialize features that might need it
+    setTimeout(() => {
+        animateFeatureCards();
+        initTestimonialsCarousel();
+    }, 100);
 });

@@ -6,17 +6,82 @@
         repeating-linear-gradient(
             45deg,
             transparent,
-            transparent 10px,
-            rgba(255, 255, 255, 0.1) 10px,
-            rgba(255, 255, 255, 0.1) 20px
+            transparent 15px,
+            rgba(255, 255, 255, 0.1) 15px,
+            rgba(255, 255, 255, 0.1) 30px
         ),
         repeating-linear-gradient(
             -45deg,
             transparent,
-            transparent 10px,
-            rgba(255, 255, 255, 0.1) 10px,
-            rgba(255, 255, 255, 0.1) 20px
-        );
+            transparent 15px,
+            rgba(255, 255, 255, 0.1) 15px,
+            rgba(255, 255, 255, 0.1) 30px
+        ),
+        radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.1) 2px, transparent 2px);
+    background-size: 60px 60px, 60px 60px, 40px 40px;
+}
+
+/* Floating Particles Animation */
+.floating-particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: rgba(212, 175, 55, 0.6);
+    border-radius: 50%;
+    animation: floatParticle 8s ease-in-out infinite;
+}
+
+.floating-particle:nth-child(1) {
+    top: 20%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.floating-particle:nth-child(2) {
+    top: 60%;
+    left: 80%;
+    animation-delay: 2s;
+}
+
+.floating-particle:nth-child(3) {
+    top: 80%;
+    left: 40%;
+    animation-delay: 4s;
+}
+
+@keyframes floatParticle {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.6;
+    }
+    25% {
+        transform: translateY(-30px) rotate(90deg);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-60px) rotate(180deg);
+        opacity: 0.8;
+    }
+    75% {
+        transform: translateY(-30px) rotate(270deg);
+        opacity: 1;
+    }
+}
+
+/* Fix for scrolling text visibility issues */
+section {
+    position: relative;
+    z-index: 1;
+}
+
+section .container {
+    position: relative;
+    z-index: 10;
+}
+
+/* Enhanced text visibility */
+.text-overlay {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Smooth Scrolling for all browsers */
@@ -183,7 +248,7 @@ input:focus, select:focus, textarea:focus {
     box-shadow: 0 0 0 3px rgba(27, 67, 50, 0.1);
 }
 
-/* Mobile Optimizations */
+/* Enhanced Mobile Optimizations */
 @media (max-width: 768px) {
     .container {
         padding-left: 1rem;
@@ -197,6 +262,58 @@ input:focus, select:focus, textarea:focus {
     
     .section-title {
         font-size: 2rem;
+    }
+    
+    /* Fix text overlap on mobile */
+    section {
+        position: relative;
+        z-index: 2;
+    }
+    
+    .floating-particle {
+        display: none; /* Hide particles on mobile for better performance */
+    }
+    
+    /* Better spacing on mobile */
+    .py-20 {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    
+    /* Improved card layouts on mobile */
+    .grid {
+        gap: 1rem;
+    }
+}
+
+/* Tablet Optimizations */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    
+    .py-20 {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+}
+
+/* Desktop Enhancements */
+@media (min-width: 1024px) {
+    .hero-title {
+        font-size: 4.5rem;
+    }
+    
+    /* Enhanced parallax effect on desktop */
+    .parallax-section {
+        background-attachment: fixed;
+    }
+}
+
+/* Ultra-wide screen optimizations */
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1400px;
     }
 }
 
@@ -453,5 +570,164 @@ input:focus, select:focus, textarea:focus {
     }
     100% {
         left: 100%;
+    }
+}
+
+/* Enhanced Color System */
+:root {
+    --islamic-green-light: #2d6a4f;
+    --islamic-green-dark: #081c15;
+    --islamic-gold-light: #f6d55c;
+    --islamic-gold-dark: #b8860b;
+    --islamic-navy-light: #2c3e50;
+    --islamic-navy-dark: #0d1117;
+    --islamic-teal: #008080;
+    --islamic-emerald: #059669;
+    --islamic-cyan: #0891b2;
+}
+
+/* Counter Animation */
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.counter {
+    animation: countUp 1s ease-out;
+}
+
+/* Enhanced Backdrop Blur */
+.enhanced-backdrop {
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Glass Morphism Effect */
+.glass-morphism {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+/* Enhanced Text Effects */
+.text-glow {
+    text-shadow: 
+        0 0 5px rgba(212, 175, 55, 0.5),
+        0 0 10px rgba(212, 175, 55, 0.3),
+        0 0 15px rgba(212, 175, 55, 0.2);
+}
+
+.text-islamic-gradient {
+    background: linear-gradient(135deg, #1B4332, #D4AF37, #1B2951);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-flow 3s ease infinite;
+}
+
+@keyframes gradient-flow {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Advanced Hover Effects */
+.hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Islamic Geometric Border */
+.islamic-geometric-border {
+    position: relative;
+    overflow: hidden;
+}
+
+.islamic-geometric-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #1B4332, #D4AF37, #1B2951, #1B4332);
+    background-size: 300% 300%;
+    animation: borderGlow 3s ease infinite;
+    z-index: -1;
+    border-radius: inherit;
+    padding: 2px;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+}
+
+@keyframes borderGlow {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* iOS Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+    .backdrop-blur-md {
+        -webkit-backdrop-filter: blur(12px);
+    }
+    
+    .fixed {
+        position: -webkit-sticky;
+        position: sticky;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .bg-white/10 {
+        background: rgba(255, 255, 255, 0.2);
+    }
+    
+    .text-white/80 {
+        color: rgba(255, 255, 255, 0.95);
+    }
+}
+
+/* Improved focus styles for accessibility */
+.focus-ring:focus {
+    outline: 2px solid #D4AF37;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.3);
+}
+
+/* Animation performance optimizations */
+@media (prefers-reduced-motion: no-preference) {
+    .animate-on-scroll {
+        transform: translateY(30px);
+        opacity: 0;
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .animate-on-scroll.in-view {
+        transform: translateY(0);
+        opacity: 1;
     }
 }

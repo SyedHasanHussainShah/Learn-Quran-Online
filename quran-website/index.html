@@ -24,14 +24,28 @@
                 extend: {
                     colors: {
                         'islamic-green': '#1B4332',
+                        'islamic-green-light': '#2d6a4f',
+                        'islamic-green-dark': '#081c15',
                         'islamic-gold': '#D4AF37',
+                        'islamic-gold-light': '#f6d55c',
+                        'islamic-gold-dark': '#b8860b',
                         'islamic-navy': '#1B2951',
+                        'islamic-navy-light': '#2c3e50',
+                        'islamic-navy-dark': '#0d1117',
                         'islamic-beige': '#F7F3E9',
-                        'islamic-cream': '#FBF8F1'
+                        'islamic-cream': '#FBF8F1',
+                        'islamic-teal': '#008080',
+                        'islamic-emerald': '#059669',
+                        'islamic-cyan': '#0891b2'
                     },
                     fontFamily: {
                         'arabic': ['Amiri', 'serif'],
                         'main': ['Inter', 'sans-serif']
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'gradient-flow': 'gradient-flow 3s ease infinite',
+                        'border-glow': 'borderGlow 3s ease infinite'
                     }
                 }
             }
@@ -87,14 +101,24 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-islamic-navy via-islamic-green to-islamic-navy overflow-hidden">
-        <!-- Background Pattern -->
-        <div class="absolute inset-0 opacity-10">
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(rgba(27, 67, 50, 0.8), rgba(27, 41, 81, 0.8)), url('https://images.unsplash.com/photo-1584537434810-c4c24f1b5d79?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3')"></div>
+        
+        <!-- Background Pattern Overlay -->
+        <div class="absolute inset-0 opacity-20">
             <div class="absolute inset-0 bg-islamic-pattern"></div>
         </div>
         
+        <!-- Floating Particles -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="floating-particle"></div>
+            <div class="floating-particle" style="animation-delay: 2s;"></div>
+            <div class="floating-particle" style="animation-delay: 4s;"></div>
+        </div>
+        
         <!-- Hero Content -->
-        <div class="relative z-10 text-center text-white px-6 max-w-4xl mx-auto" data-aos="fade-up">
+        <div class="relative z-20 text-center text-white px-6 max-w-5xl mx-auto" data-aos="fade-up">
             <!-- Arabic Verse -->
             <div class="mb-8" data-aos="fade-down" data-aos-delay="200">
                 <p class="font-arabic text-2xl md:text-3xl mb-4 text-islamic-gold leading-relaxed">
@@ -135,8 +159,12 @@
     </section>
 
     <!-- Quran Reading Section -->
-    <section id="reading" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
+    <section id="reading" class="py-20 bg-white relative overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1609599006353-e629aca25fbc?q=80&w=2126&auto=format&fit=crop&ixlib=rb-4.0.3')"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-4xl md:text-5xl font-bold text-islamic-navy mb-6">
                     📖 Quran Reading & Recitation
@@ -192,8 +220,12 @@
     </section>
 
     <!-- Online Courses Section -->
-    <section id="courses" class="py-20 bg-gradient-to-br from-islamic-beige to-islamic-cream">
-        <div class="container mx-auto px-6">
+    <section id="courses" class="py-20 bg-gradient-to-br from-islamic-beige to-islamic-cream relative overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 opacity-8">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3')"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-4xl md:text-5xl font-bold text-islamic-navy mb-6">
                     📚 Online Quran Courses
@@ -273,9 +305,78 @@
         </div>
     </section>
 
+    <!-- Features Overview Section -->
+    <section class="py-20 bg-gradient-to-r from-teal-50 to-emerald-50 relative overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1564769625392-651b82689afe?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3')"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-islamic-navy mb-6">
+                    ✨ Why Choose QuranLearn?
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Experience the difference with our comprehensive Quranic education platform designed for modern learners.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="text-center p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="w-20 h-20 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-islamic-navy mb-3">Certified Teachers</h3>
+                    <p class="text-gray-600">Learn from qualified Islamic scholars with years of teaching experience.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="text-center p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-islamic-navy mb-3">Global Community</h3>
+                    <p class="text-gray-600">Join thousands of students from around the world in their Quranic journey.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="text-center p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+                            <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-islamic-navy mb-3">24/7 Access</h3>
+                    <p class="text-gray-600">Study at your own pace with round-the-clock access to all resources.</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="text-center p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="w-20 h-20 bg-gradient-to-br from-rose-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-islamic-navy mb-3">Free Resources</h3>
+                    <p class="text-gray-600">Access basic Quran reading and memorization tools completely free.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Tajweed & Tafsir Section -->
-    <section id="tajweed" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
+    <section id="tajweed" class="py-20 bg-white relative overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1591604021060-a1b8e034cd3a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3')"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <!-- Content -->
                 <div data-aos="fade-right">
@@ -350,9 +451,90 @@
         </div>
     </section>
 
+    <!-- Interactive Features Section -->
+    <section class="py-20 bg-gradient-to-br from-indigo-50 via-white to-cyan-50 relative overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 opacity-8">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1564771318043-4775e22c8dd3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3')"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-islamic-navy mb-6">
+                    🎯 Interactive Learning Features
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Experience cutting-edge tools designed to enhance your Quranic learning journey with modern technology.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white/90 backdrop-blur-lg p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-white/20" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-islamic-navy mb-4">Audio Recitation</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Listen to beautiful recitations by world-renowned Qaris with adjustable playback speed and repeat options.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li>✓ 50+ Famous Reciters</li>
+                        <li>✓ High-Quality Audio</li>
+                        <li>✓ Verse-by-Verse Control</li>
+                        <li>✓ Offline Download</li>
+                    </ul>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-white/90 backdrop-blur-lg p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-white/20" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-islamic-navy mb-4">Smart Search</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Find any verse instantly with our intelligent search system supporting Arabic, translation, and transliteration.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li>✓ Multi-language Search</li>
+                        <li>✓ Root Word Analysis</li>
+                        <li>✓ Topic-based Discovery</li>
+                        <li>✓ Advanced Filters</li>
+                    </ul>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-white/90 backdrop-blur-lg p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-white/20" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 12a1 1 0 01-.117-.993l2.667-8a1 1 0 011.8.4L12.39 8H15a1 1 0 01.995 1.1l-2 13A1 1 0 0113 23h-2a1 1 0 01-.995-1.1L11.61 12H9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-islamic-navy mb-4">Progress Tracking</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Monitor your learning progress with detailed analytics, achievement badges, and personalized study plans.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li>✓ Reading Progress</li>
+                        <li>✓ Memorization Stats</li>
+                        <li>✓ Achievement System</li>
+                        <li>✓ Study Streaks</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Testimonials Section -->
-    <section id="testimonials" class="py-20 bg-gradient-to-br from-islamic-navy to-islamic-green">
-        <div class="container mx-auto px-6">
+    <section id="testimonials" class="py-20 bg-gradient-to-br from-islamic-navy to-islamic-green relative overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1495344517868-8ebaf0a2044a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3')"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
                     ⭐ Student Reviews & Testimonials
@@ -423,9 +605,61 @@
         </div>
     </section>
 
+    <!-- Statistics Section -->
+    <section class="py-20 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 relative overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1542816417-0983c9c9ad53?q=80&w=2126&auto=format&fit=crop&ixlib=rb-4.0.3')"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                    📊 Our Growing Impact
+                </h2>
+                <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+                    Join millions of Muslims worldwide who have transformed their relationship with the Quran through our platform.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Stat 1 -->
+                <div class="text-center bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="text-5xl md:text-6xl font-bold text-white mb-4 counter" data-count="2500000">0</div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Verses Read</h3>
+                    <p class="text-white/80">Total verses read by our community</p>
+                </div>
+                
+                <!-- Stat 2 -->
+                <div class="text-center bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="text-5xl md:text-6xl font-bold text-white mb-4 counter" data-count="50000">0</div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Active Students</h3>
+                    <p class="text-white/80">Learning Quran daily</p>
+                </div>
+                
+                <!-- Stat 3 -->
+                <div class="text-center bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="text-5xl md:text-6xl font-bold text-white mb-4 counter" data-count="150">0</div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Certified Teachers</h3>
+                    <p class="text-white/80">Expert Islamic scholars</p>
+                </div>
+                
+                <!-- Stat 4 -->
+                <div class="text-center bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="text-5xl md:text-6xl font-bold text-white mb-4 counter" data-count="75">0</div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Countries</h3>
+                    <p class="text-white/80">Global reach worldwide</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About Us Section -->
-    <section id="about" class="py-20 bg-islamic-cream">
-        <div class="container mx-auto px-6">
+    <section id="about" class="py-20 bg-islamic-cream relative overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 opacity-8">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1609599006353-e629aca25fbc?q=80&w=2126&auto=format&fit=crop&ixlib=rb-4.0.3')"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <!-- Image Placeholder -->
                 <div class="relative" data-aos="fade-right">
@@ -491,9 +725,54 @@
         </div>
     </section>
 
+    <!-- Call to Action Section -->
+    <section class="py-20 bg-gradient-to-br from-islamic-navy via-blue-900 to-indigo-900 relative overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1585036156171-384164a8c675?q=80&w=2062&auto=format&fit=crop&ixlib=rb-4.0.3')"></div>
+        </div>
+        <!-- Islamic Pattern Overlay -->
+        <div class="absolute inset-0 opacity-30">
+            <div class="absolute inset-0 bg-islamic-pattern"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <div data-aos="fade-up">
+                <h2 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                    Start Your Quranic Journey Today
+                </h2>
+                <p class="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
+                    Join thousands of students worldwide in discovering the beauty and wisdom of the Holy Quran through our comprehensive learning platform.
+                </p>
+                
+                <!-- Arabic Quote -->
+                <div class="mb-12" data-aos="fade-up" data-aos-delay="200">
+                    <p class="font-arabic text-2xl md:text-3xl text-islamic-gold mb-4 leading-relaxed">
+                        وَلَقَدْ يَسَّرْنَا الْقُرْآنَ لِلذِّكْرِ فَهَلْ مِن مُّدَّكِرٍ
+                    </p>
+                    <p class="text-white/80 text-lg">
+                        "And We have certainly made the Quran easy for remembrance, so is there any who will remember?" - Quran 54:17
+                    </p>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-6 justify-center" data-aos="fade-up" data-aos-delay="400">
+                    <button class="bg-islamic-gold hover:bg-yellow-500 text-islamic-navy px-10 py-5 rounded-full font-bold text-xl transition-all duration-300 transform hover:scale-105 shadow-2xl">
+                        Start Free Trial
+                    </button>
+                    <button class="border-2 border-white text-white hover:bg-white hover:text-islamic-navy px-10 py-5 rounded-full font-bold text-xl transition-all duration-300 transform hover:scale-105">
+                        Watch Demo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
+    <section id="contact" class="py-20 bg-white relative overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1564771318043-4775e22c8dd3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3')"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-4xl md:text-5xl font-bold text-islamic-navy mb-6">
                     📞 Get In Touch
