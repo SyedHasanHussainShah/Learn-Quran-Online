@@ -496,7 +496,7 @@ function animateCounters() {
     counters.forEach(counter => observer.observe(counter));
 }
 
-// Enhanced Scroll Performance
+// Enhanced Scroll Performance with Premium Features
 let ticking = false;
 
 function updateScrollEffects() {
@@ -504,22 +504,50 @@ function updateScrollEffects() {
         requestAnimationFrame(() => {
             const scrolled = window.pageYOffset;
             const navbar = document.getElementById('navbar');
+            const scrollProgress = document.getElementById('scrollProgress');
             
-            // Navbar scroll effect
+            // Update scroll progress indicator
+            if (scrollProgress) {
+                const winHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPercent = (scrolled / winHeight) * 100;
+                scrollProgress.style.transform = `scaleX(${scrollPercent / 100})`;
+            }
+            
+            // Enhanced navbar scroll effect
             if (scrolled > 100) {
-                navbar.classList.add('bg-white/95', 'shadow-xl');
+                navbar.classList.add('bg-white/95', 'shadow-xl', 'backdrop-premium');
                 navbar.classList.remove('bg-white/90', 'shadow-lg');
             } else {
                 navbar.classList.add('bg-white/90', 'shadow-lg');
-                navbar.classList.remove('bg-white/95', 'shadow-xl');
+                navbar.classList.remove('bg-white/95', 'shadow-xl', 'backdrop-premium');
             }
             
-            // Parallax effect for hero section
+            // Enhanced parallax effect for hero section
             const hero = document.querySelector('#home');
             if (hero && scrolled < window.innerHeight) {
-                const speed = scrolled * 0.3;
+                const speed = scrolled * 0.2;
                 hero.style.transform = `translateY(${speed}px)`;
+                
+                // Add fade effect to hero content
+                const heroContent = hero.querySelector('.relative.z-20');
+                if (heroContent) {
+                    const opacity = Math.max(0, 1 - (scrolled / window.innerHeight));
+                    heroContent.style.opacity = opacity;
+                }
             }
+            
+            // Premium section transitions
+            const sections = document.querySelectorAll('section');
+            sections.forEach((section, index) => {
+                const rect = section.getBoundingClientRect();
+                const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+                
+                if (isVisible) {
+                    section.classList.add('section-active');
+                } else {
+                    section.classList.remove('section-active');
+                }
+            });
             
             ticking = false;
         });
