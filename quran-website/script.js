@@ -522,17 +522,23 @@ function updateScrollEffects() {
                 navbar.classList.remove('bg-white/95', 'shadow-xl', 'backdrop-premium');
             }
             
-            // Enhanced parallax effect for hero section
+            // Professional parallax effect for hero section
             const hero = document.querySelector('#home');
             if (hero && scrolled < window.innerHeight) {
-                const speed = scrolled * 0.2;
-                hero.style.transform = `translateY(${speed}px)`;
+                // Subtle parallax that doesn't break layout
+                const speed = scrolled * 0.1;
+                const backgroundElements = hero.querySelectorAll('.absolute');
+                backgroundElements.forEach((element, index) => {
+                    if (!element.classList.contains('z-20')) {
+                        element.style.transform = `translateY(${speed * (index + 1) * 0.5}px)`;
+                    }
+                });
                 
-                // Add fade effect to hero content
-                const heroContent = hero.querySelector('.relative.z-20');
+                // Keep content properly positioned
+                const heroContent = hero.querySelector('.z-20');
                 if (heroContent) {
-                    const opacity = Math.max(0, 1 - (scrolled / window.innerHeight));
-                    heroContent.style.opacity = opacity;
+                    heroContent.style.transform = 'none';
+                    heroContent.style.opacity = '1';
                 }
             }
             
