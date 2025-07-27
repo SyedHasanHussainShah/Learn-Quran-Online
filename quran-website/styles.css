@@ -1,0 +1,457 @@
+/* Custom Islamic Patterns and Additional Styles */
+
+/* Islamic Geometric Pattern Background */
+.bg-islamic-pattern {
+    background-image: 
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 10px,
+            rgba(255, 255, 255, 0.1) 10px,
+            rgba(255, 255, 255, 0.1) 20px
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            transparent,
+            transparent 10px,
+            rgba(255, 255, 255, 0.1) 10px,
+            rgba(255, 255, 255, 0.1) 20px
+        );
+}
+
+/* Smooth Scrolling for all browsers */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1B4332;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #D4AF37;
+}
+
+/* Navigation Enhancements */
+.nav-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #1B4332, #D4AF37);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::before {
+    width: 100%;
+}
+
+/* Button Hover Effects */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-secondary {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-secondary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.5s;
+}
+
+.btn-secondary:hover::before {
+    left: 100%;
+}
+
+/* Card Animations */
+.feature-card, .course-card, .testimonial-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-card:hover, .course-card:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Gradient Text Animation */
+@keyframes gradient-text {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.gradient-text {
+    background: linear-gradient(-45deg, #1B4332, #D4AF37, #1B2951, #1B4332);
+    background-size: 400% 400%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-text 3s ease infinite;
+}
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.floating {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Pulse Animation for Icons */
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(27, 67, 50, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(27, 67, 50, 0.6);
+    }
+}
+
+.pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Islamic Calligraphy Style */
+.arabic-text {
+    font-family: 'Amiri', serif;
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+}
+
+/* Form Focus Effects */
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    ring-offset-2: 2px;
+    ring-offset-color: #D4AF37;
+    border-color: #1B4332;
+    box-shadow: 0 0 0 3px rgba(27, 67, 50, 0.1);
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-primary: #1a1a1a;
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+    }
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus visible for keyboard navigation */
+*:focus-visible {
+    outline: 2px solid #D4AF37;
+    outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+    .fixed, .sticky {
+        position: static !important;
+    }
+    
+    .bg-gradient-to-br, .bg-gradient-to-r {
+        background: #ffffff !important;
+        color: #000000 !important;
+    }
+}
+
+/* Custom Islamic Border Pattern */
+.islamic-border {
+    border: 2px solid;
+    border-image: linear-gradient(45deg, #1B4332, #D4AF37, #1B2951, #1B4332) 1;
+}
+
+/* Glowing Text Effect */
+.glow-text {
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+/* Backdrop Blur Enhancement */
+.backdrop-blur-enhanced {
+    backdrop-filter: blur(10px) saturate(150%);
+    -webkit-backdrop-filter: blur(10px) saturate(150%);
+}
+
+/* Custom Shadow Effects */
+.shadow-islamic {
+    box-shadow: 0 10px 25px rgba(27, 67, 50, 0.15);
+}
+
+.shadow-islamic-lg {
+    box-shadow: 0 20px 40px rgba(27, 67, 50, 0.2);
+}
+
+/* Geometric Pattern Overlay */
+.geometric-pattern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 2px, transparent 2px),
+        radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.1) 2px, transparent 2px);
+    background-size: 50px 50px;
+    pointer-events: none;
+}
+
+/* Smooth Hover Transitions */
+.smooth-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.smooth-hover:hover {
+    transform: translateY(-2px);
+}
+
+/* Loading Animation */
+@keyframes shimmer {
+    0% {
+        background-position: -200px 0;
+    }
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
+}
+
+.shimmer {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* Islamic Star Pattern */
+.star-pattern {
+    background-image: 
+        radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.1) 2px, transparent 2px);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+}
+
+/* Responsive Typography */
+@media (min-width: 640px) {
+    .responsive-text-sm {
+        font-size: 1.125rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .responsive-text-md {
+        font-size: 1.25rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .responsive-text-lg {
+        font-size: 1.5rem;
+    }
+}
+
+/* Interactive Elements */
+.interactive-hover:hover {
+    cursor: pointer;
+    background: linear-gradient(135deg, rgba(27, 67, 50, 0.1), rgba(212, 175, 55, 0.1));
+}
+
+/* Elegant Underline Animation */
+.elegant-underline {
+    position: relative;
+}
+
+.elegant-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #1B4332, #D4AF37);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.elegant-underline:hover::after {
+    width: 100%;
+}
+
+/* Content Fade In Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Mobile Menu Slide Animation */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-down {
+    animation: slideDown 0.3s ease-out;
+}
+
+/* Gold Accent Border */
+.gold-accent {
+    border-left: 4px solid #D4AF37;
+    padding-left: 1rem;
+}
+
+/* Testimonial Quote Styling */
+.testimonial-quote::before {
+    content: '"';
+    font-size: 4rem;
+    color: rgba(212, 175, 55, 0.3);
+    position: absolute;
+    top: -1rem;
+    left: -0.5rem;
+    font-family: serif;
+}
+
+.testimonial-quote {
+    position: relative;
+    font-style: italic;
+}
+
+/* Enhanced Card Shadows */
+.card-shadow {
+    box-shadow: 
+        0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06),
+        0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.card-shadow:hover {
+    box-shadow: 
+        0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04),
+        0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+/* Loading States */
+.loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
