@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuranLearn - Read, Reflect, and Learn the Holy Quran | Premium Islamic Education</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Font - Amiri for Arabic and Inter for English -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'islamic-green': '#1B4332',
+                        'islamic-green-light': '#2d6a4f',
+                        'islamic-green-dark': '#081c15',
+                        'islamic-gold': '#D4AF37',
+                        'islamic-gold-light': '#f6d55c',
+                        'islamic-gold-dark': '#b8860b',
+                        'islamic-navy': '#1B2951',
+                        'islamic-navy-light': '#2c3e50',
+                        'islamic-navy-dark': '#0d1117',
+                        'islamic-beige': '#F7F3E9',
+                        'islamic-cream': '#FBF8F1',
+                        'islamic-teal': '#008080',
+                        'islamic-emerald': '#059669',
+                        'islamic-cyan': '#0891b2'
+                    },
+                    fontFamily: {
+                        'arabic': ['Amiri', 'serif'],
+                        'main': ['Inter', 'sans-serif']
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'gradient-flow': 'gradient-flow 3s ease infinite',
+                        'border-glow': 'borderGlow 3s ease infinite'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-main bg-islamic-cream">
+    <!-- Premium Scroll Progress Indicator -->
+    <div class="scroll-indicator" id="scrollProgress"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-lg transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-islamic-green to-islamic-navy rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">ق</span>
+                    </div>
+                    <span class="text-2xl font-bold text-islamic-navy">QuranLearn</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-islamic-navy hover:text-islamic-green transition-colors duration-300">Home</a>
+                    <a href="#reading" class="nav-link text-islamic-navy hover:text-islamic-green transition-colors duration-300">Quran Reading</a>
+                    <a href="#courses" class="nav-link text-islamic-navy hover:text-islamic-green transition-colors duration-300">Courses</a>
+                    <a href="#tajweed" class="nav-link text-islamic-navy hover:text-islamic-green transition-colors duration-300">Tajweed</a>
+                    <a href="#testimonials" class="nav-link text-islamic-navy hover:text-islamic-green transition-colors duration-300">Reviews</a>
+                    <a href="#about" class="nav-link text-islamic-navy hover:text-islamic-green transition-colors duration-300">About</a>
+                    <a href="#contact" class="nav-link text-islamic-navy hover:text-islamic-green transition-colors duration-300">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-islamic-navy hover:text-islamic-green transition-colors" id="mobile-menu-btn">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div class="md:hidden mt-4 pb-4 hidden" id="mobile-menu">
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="nav-link text-islamic-navy hover:text-islamic-green transition-colors duration-300">Home</a>
+                    <a href="#reading" class="nav-link text-islamic-navy hover:text-islamic-green transition-colors duration-300">Quran Reading</a>
+                    <a href="#courses" class="nav-link text-islamic-navy hover:text-islamic-green transition-colors duration-300">Courses</a>
+                    <a href="#tajweed" class="nav-link text-islamic-navy hover:text-islamic-green transition-colors duration-300">Tajweed</a>
+                    <a href="#testimonials" class="nav-link text-islamic-navy hover:text-islamic-green transition-colors duration-300">Reviews</a>
+                    <a href="#about" class="nav-link text-islamic-navy hover:text-islamic-green transition-colors duration-300">About</a>
+                    <a href="#contact" class="nav-link text-islamic-navy hover:text-islamic-green transition-colors duration-300">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Fixed Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Beautiful Quran Background -->
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1595123550441-d377e017de6a?q=80&w=2940&auto=format&fit=crop')"></div>
+        <!-- Secondary Quran Image Layer -->
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" style="background-image: url('https://images.unsplash.com/photo-1609599006353-e629aca25fbc?q=80&w=2940&auto=format&fit=crop')"></div>
+        <!-- Professional Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-br from-slate-900/70 via-emerald-900/50 to-amber-900/70"></div>
+        
+        <!-- Background Pattern Overlay -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute inset-0 bg-islamic-pattern"></div>
+        </div>
+        
+        <!-- Enhanced Floating Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="floating-particle"></div>
+            <div class="floating-particle" style="animation-delay: 2s;"></div>
+            <div class="floating-particle" style="animation-delay: 4s;"></div>
+            <div class="floating-particle" style="animation-delay: 6s;"></div>
+            <div class="floating-particle" style="animation-delay: 8s;"></div>
+            <!-- Golden Islamic Stars -->
+            <div class="floating-star"></div>
+            <div class="floating-star" style="animation-delay: 3s;"></div>
+            <div class="floating-star" style="animation-delay: 7s;"></div>
+            <!-- Glowing Orbs -->
+            <div class="glowing-orb"></div>
+            <div class="glowing-orb" style="animation-delay: 4s;"></div>
+        </div>
+        
+        <!-- Perfectly Centered Hero Content -->
+        <div class="container mx-auto px-6 relative z-20">
+            <div class="text-center text-white max-w-6xl mx-auto" data-aos="fade-up">
+            <!-- Enhanced Arabic Verse -->
+            <div class="mb-12" data-aos="fade-down" data-aos-delay="200">
+                <div class="bg-black/20 backdrop-blur-lg rounded-3xl p-8 border border-amber-400/30 shadow-2xl">
+                    <p class="font-arabic text-3xl md:text-4xl lg:text-5xl mb-6 text-transparent bg-gradient-to-r from-amber-300 via-yellow-300 to-amber-400 bg-clip-text leading-relaxed text-glow">
+                        بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+                    </p>
+                    <p class="text-lg md:text-xl text-amber-200/90 font-light">In the name of Allah, the Most Gracious, the Most Merciful</p>
+                    <div class="mt-4 h-px bg-gradient-to-r from-transparent via-amber-400 to-transparent"></div>
+                </div>
+            </div>
+            
+            <!-- Enhanced Main Title -->
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight" data-aos="fade-up" data-aos-delay="400">
+                <span class="text-transparent bg-gradient-to-r from-white via-amber-200 to-white bg-clip-text">Read, Reflect, and Learn</span><br>
+                <span class="text-transparent bg-gradient-to-r from-amber-300 via-yellow-400 to-amber-300 bg-clip-text animate-pulse">the Holy Quran</span>
+            </h1>
+            
+            <!-- Enhanced Subtitle -->
+            <div class="mb-10" data-aos="fade-up" data-aos-delay="600">
+                <p class="text-xl md:text-3xl mb-4 font-light text-white/95 leading-relaxed">
+                    Your journey to understanding begins here.
+                </p>
+                <p class="text-lg md:text-xl text-amber-300/90 italic">
+                    "Discover the beauty and wisdom of the Quran with modern learning tools"
+                </p>
+                <div class="mt-6 flex justify-center">
+                    <div class="h-1 w-32 bg-gradient-to-r from-transparent via-amber-400 to-transparent rounded-full"></div>
+                </div>
+            </div>
+            
+            <!-- Enhanced CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center" data-aos="fade-up" data-aos-delay="800">
+                <button class="group btn-primary bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-500 hover:from-amber-400 hover:via-yellow-400 hover:to-amber-400 text-gray-900 px-10 py-5 rounded-full font-bold text-xl transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-amber-500/25 border-2 border-amber-300">
+                    <span class="flex items-center gap-3">
+                        <svg class="w-6 h-6 group-hover:rotate-12 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                        </svg>
+                        Start Learning
+                    </span>
+                </button>
+                <button class="group btn-secondary bg-transparent border-3 border-white/80 text-white hover:bg-white hover:text-gray-900 px-10 py-5 rounded-full font-bold text-xl transition-all duration-500 transform hover:scale-110 backdrop-blur-lg shadow-xl hover:shadow-white/25">
+                    <span class="flex items-center gap-3">
+                        <svg class="w-6 h-6 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M19 10a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        Explore Courses
+                    </span>
+                </button>
+            </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce" data-aos="fade-up" data-aos-delay="1000">
+            <div class="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+                <div class="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Quran Reading Section -->
+    <section id="reading" class="py-24 bg-gradient-to-br from-white via-blue-50 to-indigo-50 relative overflow-hidden">
+        <!-- Beautiful Islamic Library Background -->
+        <div class="absolute inset-0 opacity-12">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=2940&auto=format&fit=crop')"></div>
+        </div>
+        <!-- Quran Pages Background -->
+        <div class="absolute inset-0 opacity-8">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1609599006353-e629aca25fbc?q=80&w=2940&auto=format&fit=crop')"></div>
+        </div>
+        <!-- Professional Floating Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-20 left-20 w-40 h-40 bg-blue-300/15 rounded-full blur-2xl animate-float"></div>
+            <div class="absolute bottom-20 right-20 w-56 h-56 bg-indigo-300/15 rounded-full blur-2xl animate-float" style="animation-delay: 3s;"></div>
+            <div class="absolute top-1/2 left-1/4 w-32 h-32 bg-purple-300/15 rounded-full blur-2xl animate-float" style="animation-delay: 6s;"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-islamic-navy mb-6">
+                    📖 Quran Reading & Recitation
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Experience the divine words of Allah with beautiful recitations and multiple translations. 
+                    Read, listen, and reflect on the sacred verses.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Enhanced Feature Card 1 -->
+                <div class="feature-card group bg-gradient-to-br from-white via-emerald-50 to-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 hover:scale-105 border border-emerald-100/50 backdrop-blur-sm" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 bg-gradient-to-br from-emerald-500 via-teal-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-8 mx-auto group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                        <svg class="w-10 h-10 text-white group-hover:animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center group-hover:text-emerald-700 transition-colors">Multiple Reciters</h3>
+                    <p class="text-gray-600 text-center leading-relaxed group-hover:text-gray-700 transition-colors">
+                        Listen to renowned Qaris from around the world with crystal clear audio quality and authentic pronunciation.
+                    </p>
+                    <div class="mt-6 flex justify-center">
+                        <div class="h-1 w-16 bg-gradient-to-r from-transparent via-emerald-400 to-transparent rounded-full group-hover:w-24 transition-all duration-500"></div>
+                    </div>
+                </div>
+                
+                <!-- Feature Card 2 -->
+                <div class="feature-card bg-gradient-to-br from-islamic-cream to-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 bg-gradient-to-br from-islamic-green to-islamic-navy rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"/>
+                            <path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-islamic-navy mb-4 text-center">Multiple Translations</h3>
+                    <p class="text-gray-600 text-center leading-relaxed">
+                        Access translations in over 50 languages to better understand the meaning and context of verses.
+                    </p>
+                </div>
+                
+                <!-- Feature Card 3 -->
+                <div class="feature-card bg-gradient-to-br from-islamic-cream to-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="600">
+                    <div class="w-16 h-16 bg-gradient-to-br from-islamic-green to-islamic-navy rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-islamic-navy mb-4 text-center">Verse by Verse</h3>
+                    <p class="text-gray-600 text-center leading-relaxed">
+                        Navigate through the Quran verse by verse with synchronized highlighting and audio playback.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Online Courses Section -->
+    <section id="courses" class="py-24 bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 relative overflow-hidden">
+        <!-- Premium Background Layers -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=2940&auto=format&fit=crop')"></div>
+        </div>
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1544376664-80b17f09d399?q=80&w=2940&auto=format&fit=crop')"></div>
+        </div>
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-40 -right-40 w-80 h-80 bg-amber-300/10 rounded-full blur-3xl animate-spin-slow"></div>
+            <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-orange-300/10 rounded-full blur-3xl animate-spin-reverse"></div>
+            <div class="absolute top-1/3 left-1/4 w-64 h-64 bg-yellow-300/10 rounded-full blur-2xl animate-float"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-islamic-navy mb-6">
+                    📚 Online Quran Courses
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Learn from certified teachers with structured courses designed for all levels - from beginners to advanced students.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Premium Course Card 1 -->
+                <div class="course-card group bg-white rounded-3xl shadow-2xl hover:shadow-emerald-200/25 transition-all duration-500 overflow-hidden transform hover:-translate-y-6 hover:scale-105 border border-emerald-100/50" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-56 bg-gradient-to-br from-emerald-600 via-teal-600 to-green-700 relative overflow-hidden">
+                        <!-- Premium Background Image -->
+                        <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('https://images.unsplash.com/photo-1609599006353-e629aca25fbc?q=80&w=2940&auto=format&fit=crop')"></div>
+                        <div class="absolute inset-0 bg-islamic-pattern opacity-20"></div>
+                        <!-- Floating Icons -->
+                        <div class="absolute top-4 right-4 w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3z"/>
+                            </svg>
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+                            <span class="bg-gradient-to-r from-amber-400 to-yellow-400 text-gray-900 px-4 py-2 rounded-full text-sm font-bold shadow-lg">✨ Beginner</span>
+                            <div class="text-white text-right">
+                                <div class="text-xs opacity-80">4.9 ⭐⭐⭐⭐⭐</div>
+                                <div class="text-sm">1,234 students</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-islamic-navy mb-3">Quran Reading Basics</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Learn to read Arabic letters, words, and basic Quran recitation with proper pronunciation.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-islamic-gold font-bold text-xl">Free</span>
+                            <button class="bg-islamic-green text-white px-4 py-2 rounded-lg hover:bg-islamic-navy transition-colors">
+                                Start Course
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course Card 2 -->
+                <div class="course-card bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="400">
+                    <div class="h-48 bg-gradient-to-br from-islamic-navy to-islamic-green relative overflow-hidden">
+                        <div class="absolute inset-0 bg-islamic-pattern opacity-20"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <span class="bg-islamic-gold text-islamic-navy px-3 py-1 rounded-full text-sm font-semibold">Intermediate</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-islamic-navy mb-3">Tajweed Mastery</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Master the rules of Tajweed for beautiful and correct Quran recitation according to Islamic tradition.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-islamic-gold font-bold text-xl">$29/month</span>
+                            <button class="bg-islamic-green text-white px-4 py-2 rounded-lg hover:bg-islamic-navy transition-colors">
+                                Enroll Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course Card 3 -->
+                <div class="course-card bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="600">
+                    <div class="h-48 bg-gradient-to-br from-islamic-green to-islamic-gold relative overflow-hidden">
+                        <div class="absolute inset-0 bg-islamic-pattern opacity-20"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <span class="bg-white text-islamic-navy px-3 py-1 rounded-full text-sm font-semibold">Advanced</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-islamic-navy mb-3">Quran Memorization</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Structured program to memorize the Holy Quran with proven techniques and personal guidance.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-islamic-gold font-bold text-xl">$49/month</span>
+                            <button class="bg-islamic-green text-white px-4 py-2 rounded-lg hover:bg-islamic-navy transition-colors">
+                                Join Program
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stunning Features Overview Section -->
+    <section class="py-24 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 relative overflow-hidden">
+        <!-- Majestic Islamic Architecture Background -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1564769625392-651b82689afe?q=80&w=2940&auto=format&fit=crop')"></div>
+        </div>
+        <!-- Golden Mosque Details -->
+        <div class="absolute inset-0 opacity-15">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1542816417-0983c9c9ad53?q=80&w=2940&auto=format&fit=crop')"></div>
+        </div>
+        <!-- Professional Animated Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-40 -right-40 w-80 h-80 bg-purple-400/10 rounded-full blur-3xl animate-spin-slow"></div>
+            <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl animate-spin-reverse"></div>
+            <div class="absolute top-1/3 left-1/3 w-64 h-64 bg-indigo-400/10 rounded-full blur-2xl animate-float"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-6xl font-bold text-white mb-6 text-glow">
+                    ✨ Why Choose QuranLearn?
+                </h2>
+                <p class="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
+                    Experience the difference with our comprehensive Quranic education platform designed for modern learners.
+                </p>
+                <div class="mt-8 flex justify-center">
+                    <div class="h-1 w-32 bg-gradient-to-r from-transparent via-amber-400 to-transparent rounded-full"></div>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Professional Feature 1 -->
+                <div class="text-center p-8 bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl hover:shadow-purple-500/25 transition-all duration-500 transform hover:-translate-y-4 border border-white/20" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="w-24 h-24 bg-gradient-to-br from-purple-500 via-pink-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-lg group-hover:scale-110 transition-transform">
+                        <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Certified Teachers</h3>
+                    <p class="text-white/80 leading-relaxed">Learn from qualified Islamic scholars with years of teaching experience.</p>
+                    <div class="mt-6 flex justify-center">
+                        <div class="h-1 w-16 bg-gradient-to-r from-transparent via-purple-400 to-transparent rounded-full"></div>
+                    </div>
+                </div>
+                
+                <!-- Professional Feature 2 -->
+                <div class="text-center p-8 bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform hover:-translate-y-4 border border-white/20" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="w-24 h-24 bg-gradient-to-br from-blue-500 via-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-lg group-hover:scale-110 transition-transform">
+                        <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Global Community</h3>
+                    <p class="text-white/80 leading-relaxed">Join thousands of students from around the world in their Quranic journey.</p>
+                    <div class="mt-6 flex justify-center">
+                        <div class="h-1 w-16 bg-gradient-to-r from-transparent via-blue-400 to-transparent rounded-full"></div>
+                    </div>
+                </div>
+                
+                <!-- Professional Feature 3 -->
+                <div class="text-center p-8 bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl hover:shadow-indigo-500/25 transition-all duration-500 transform hover:-translate-y-4 border border-white/20" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="w-24 h-24 bg-gradient-to-br from-indigo-500 via-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-lg group-hover:scale-110 transition-transform">
+                        <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+                            <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">24/7 Access</h3>
+                    <p class="text-white/80 leading-relaxed">Study at your own pace with round-the-clock access to all resources.</p>
+                    <div class="mt-6 flex justify-center">
+                        <div class="h-1 w-16 bg-gradient-to-r from-transparent via-indigo-400 to-transparent rounded-full"></div>
+                    </div>
+                </div>
+                
+                <!-- Professional Feature 4 -->
+                <div class="text-center p-8 bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl hover:shadow-pink-500/25 transition-all duration-500 transform hover:-translate-y-4 border border-white/20" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="w-24 h-24 bg-gradient-to-br from-pink-500 via-rose-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-lg group-hover:scale-110 transition-transform">
+                        <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Free Resources</h3>
+                    <p class="text-white/80 leading-relaxed">Access basic Quran reading and memorization tools completely free.</p>
+                    <div class="mt-6 flex justify-center">
+                        <div class="h-1 w-16 bg-gradient-to-r from-transparent via-pink-400 to-transparent rounded-full"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tajweed & Tafsir Section -->
+    <section id="tajweed" class="py-20 bg-white relative overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1591604021060-a1b8e034cd3a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3')"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Content -->
+                <div data-aos="fade-right">
+                    <h2 class="text-4xl md:text-5xl font-bold text-islamic-navy mb-6">
+                        🗣️ Learn Tajweed & Tafsir
+                    </h2>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                        Deepen your understanding of the Quran through proper recitation rules (Tajweed) and 
+                        comprehensive interpretation (Tafsir) from renowned Islamic scholars.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-islamic-green rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-islamic-navy mb-2">Perfect Pronunciation</h3>
+                                <p class="text-gray-600">Learn the correct pronunciation of Arabic letters and words according to classical rules.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-islamic-green rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-islamic-navy mb-2">Deep Understanding</h3>
+                                <p class="text-gray-600">Explore the meaning, context, and wisdom behind each verse with scholarly commentary.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-islamic-green rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-islamic-navy mb-2">Practical Application</h3>
+                                <p class="text-gray-600">Apply Quranic teachings in daily life with practical examples and guidance.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="mt-8 bg-islamic-gold hover:bg-yellow-500 text-islamic-navy px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105">
+                        Explore Tajweed Courses
+                    </button>
+                </div>
+                
+                <!-- Image Placeholder -->
+                <div class="relative" data-aos="fade-left">
+                    <div class="h-96 bg-gradient-to-br from-islamic-navy via-islamic-green to-islamic-gold rounded-2xl shadow-2xl relative overflow-hidden">
+                        <div class="absolute inset-0 bg-islamic-pattern opacity-30"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z"/>
+                                    </svg>
+                                </div>
+                                <p class="text-xl font-semibold">Interactive Tajweed Lessons</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Features Section -->
+    <section class="py-20 bg-gradient-to-br from-indigo-50 via-white to-cyan-50 relative overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 opacity-8">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1564771318043-4775e22c8dd3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3')"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-islamic-navy mb-6">
+                    🎯 Interactive Learning Features
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Experience cutting-edge tools designed to enhance your Quranic learning journey with modern technology.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white/90 backdrop-blur-lg p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-white/20" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-islamic-navy mb-4">Audio Recitation</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Listen to beautiful recitations by world-renowned Qaris with adjustable playback speed and repeat options.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li>✓ 50+ Famous Reciters</li>
+                        <li>✓ High-Quality Audio</li>
+                        <li>✓ Verse-by-Verse Control</li>
+                        <li>✓ Offline Download</li>
+                    </ul>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-white/90 backdrop-blur-lg p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-white/20" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-islamic-navy mb-4">Smart Search</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Find any verse instantly with our intelligent search system supporting Arabic, translation, and transliteration.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li>✓ Multi-language Search</li>
+                        <li>✓ Root Word Analysis</li>
+                        <li>✓ Topic-based Discovery</li>
+                        <li>✓ Advanced Filters</li>
+                    </ul>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-white/90 backdrop-blur-lg p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-white/20" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 12a1 1 0 01-.117-.993l2.667-8a1 1 0 011.8.4L12.39 8H15a1 1 0 01.995 1.1l-2 13A1 1 0 0113 23h-2a1 1 0 01-.995-1.1L11.61 12H9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-islamic-navy mb-4">Progress Tracking</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Monitor your learning progress with detailed analytics, achievement badges, and personalized study plans.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li>✓ Reading Progress</li>
+                        <li>✓ Memorization Stats</li>
+                        <li>✓ Achievement System</li>
+                        <li>✓ Study Streaks</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Testimonials Section -->
+    <section id="testimonials" class="py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden">
+        <!-- Multiple Premium Background Layers -->
+        <div class="absolute inset-0 opacity-15">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1542816417-0983c9c9ad53?q=80&w=2940&auto=format&fit=crop')"></div>
+        </div>
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1564769625392-651b82689afe?q=80&w=2940&auto=format&fit=crop')"></div>
+        </div>
+        <!-- Animated Stars Background -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="star-field"></div>
+            <div class="star-field" style="animation-delay: 5s;"></div>
+            <div class="star-field" style="animation-delay: 10s;"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                    ⭐ Student Reviews & Testimonials
+                </h2>
+                <p class="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+                    Hear from our students about their transformative journey learning the Quran with us.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white/10 backdrop-blur-md rounded-2xl p-8 text-white border border-white/20 hover:bg-white/20 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-islamic-gold rounded-full flex items-center justify-center text-islamic-navy font-bold text-xl">
+                            A
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-lg">Ahmed Al-Rahman</h4>
+                            <p class="text-white/70">Student from Canada</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-4">
+                        <span class="text-islamic-gold">★★★★★</span>
+                    </div>
+                    <p class="leading-relaxed">
+                        "The Tajweed courses transformed my recitation completely. The teachers are incredibly patient and knowledgeable. I can now recite with confidence and proper pronunciation."
+                    </p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white/10 backdrop-blur-md rounded-2xl p-8 text-white border border-white/20 hover:bg-white/20 transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-islamic-gold rounded-full flex items-center justify-center text-islamic-navy font-bold text-xl">
+                            F
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-lg">Fatima Hassan</h4>
+                            <p class="text-white/70">Student from UK</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-4">
+                        <span class="text-islamic-gold">★★★★★</span>
+                    </div>
+                    <p class="leading-relaxed">
+                        "As a new Muslim, this platform made learning so accessible. The step-by-step approach and multiple translations helped me understand the beauty of the Quran."
+                    </p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white/10 backdrop-blur-md rounded-2xl p-8 text-white border border-white/20 hover:bg-white/20 transition-all duration-300" data-aos="fade-up" data-aos-delay="600">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-islamic-gold rounded-full flex items-center justify-center text-islamic-navy font-bold text-xl">
+                            O
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-lg">Omar Abdullah</h4>
+                            <p class="text-white/70">Student from USA</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-4">
+                        <span class="text-islamic-gold">★★★★★</span>
+                    </div>
+                    <p class="leading-relaxed">
+                        "The memorization program is exceptional. The systematic approach and regular revision schedules helped me memorize 5 Surahs in just 3 months!"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-20 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 relative overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1542816417-0983c9c9ad53?q=80&w=2126&auto=format&fit=crop&ixlib=rb-4.0.3')"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                    📊 Our Growing Impact
+                </h2>
+                <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+                    Join millions of Muslims worldwide who have transformed their relationship with the Quran through our platform.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Stat 1 -->
+                <div class="text-center bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="text-5xl md:text-6xl font-bold text-white mb-4 counter" data-count="2500000">0</div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Verses Read</h3>
+                    <p class="text-white/80">Total verses read by our community</p>
+                </div>
+                
+                <!-- Stat 2 -->
+                <div class="text-center bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="text-5xl md:text-6xl font-bold text-white mb-4 counter" data-count="50000">0</div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Active Students</h3>
+                    <p class="text-white/80">Learning Quran daily</p>
+                </div>
+                
+                <!-- Stat 3 -->
+                <div class="text-center bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="text-5xl md:text-6xl font-bold text-white mb-4 counter" data-count="150">0</div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Certified Teachers</h3>
+                    <p class="text-white/80">Expert Islamic scholars</p>
+                </div>
+                
+                <!-- Stat 4 -->
+                <div class="text-center bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="text-5xl md:text-6xl font-bold text-white mb-4 counter" data-count="75">0</div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Countries</h3>
+                    <p class="text-white/80">Global reach worldwide</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-islamic-cream relative overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 opacity-8">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1609599006353-e629aca25fbc?q=80&w=2126&auto=format&fit=crop&ixlib=rb-4.0.3')"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Image Placeholder -->
+                <div class="relative" data-aos="fade-right">
+                    <div class="h-96 bg-gradient-to-br from-islamic-green via-islamic-navy to-islamic-gold rounded-2xl shadow-2xl relative overflow-hidden">
+                        <div class="absolute inset-0 bg-islamic-pattern opacity-30"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <p class="text-xl font-semibold">Our Mission</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Content -->
+                <div data-aos="fade-left">
+                    <h2 class="text-4xl md:text-5xl font-bold text-islamic-navy mb-6">
+                        👤 About QuranLearn
+                    </h2>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                        We are dedicated to making Quranic education accessible to Muslims worldwide through 
+                        modern technology and traditional Islamic scholarship.
+                    </p>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-islamic-navy mb-3">Our Mission</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                To provide high-quality Quranic education that combines authentic Islamic teachings 
+                                with modern learning methodologies, making the Quran accessible to learners of all levels.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-2xl font-semibold text-islamic-navy mb-3">Our Vision</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                To become the world's leading platform for Quranic education, fostering a global 
+                                community of learners connected through the divine words of Allah.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-3 gap-8 text-center">
+                        <div>
+                            <div class="text-3xl font-bold text-islamic-green mb-2">10K+</div>
+                            <p class="text-gray-600">Active Students</p>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-islamic-green mb-2">50+</div>
+                            <p class="text-gray-600">Certified Teachers</p>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-islamic-green mb-2">25+</div>
+                            <p class="text-gray-600">Countries Served</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-20 bg-gradient-to-br from-islamic-navy via-blue-900 to-indigo-900 relative overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1585036156171-384164a8c675?q=80&w=2062&auto=format&fit=crop&ixlib=rb-4.0.3')"></div>
+        </div>
+        <!-- Islamic Pattern Overlay -->
+        <div class="absolute inset-0 opacity-30">
+            <div class="absolute inset-0 bg-islamic-pattern"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <div data-aos="fade-up">
+                <h2 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                    Start Your Quranic Journey Today
+                </h2>
+                <p class="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
+                    Join thousands of students worldwide in discovering the beauty and wisdom of the Holy Quran through our comprehensive learning platform.
+                </p>
+                
+                <!-- Arabic Quote -->
+                <div class="mb-12" data-aos="fade-up" data-aos-delay="200">
+                    <p class="font-arabic text-2xl md:text-3xl text-islamic-gold mb-4 leading-relaxed">
+                        وَلَقَدْ يَسَّرْنَا الْقُرْآنَ لِلذِّكْرِ فَهَلْ مِن مُّدَّكِرٍ
+                    </p>
+                    <p class="text-white/80 text-lg">
+                        "And We have certainly made the Quran easy for remembrance, so is there any who will remember?" - Quran 54:17
+                    </p>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-6 justify-center" data-aos="fade-up" data-aos-delay="400">
+                    <button class="bg-islamic-gold hover:bg-yellow-500 text-islamic-navy px-10 py-5 rounded-full font-bold text-xl transition-all duration-300 transform hover:scale-105 shadow-2xl">
+                        Start Free Trial
+                    </button>
+                    <button class="border-2 border-white text-white hover:bg-white hover:text-islamic-navy px-10 py-5 rounded-full font-bold text-xl transition-all duration-300 transform hover:scale-105">
+                        Watch Demo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white relative overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1564771318043-4775e22c8dd3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3')"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-islamic-navy mb-6">
+                    📞 Get In Touch
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Have questions about our courses or need guidance on your Quranic learning journey? 
+                    We're here to help you every step of the way.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Contact Form -->
+                <div data-aos="fade-right">
+                    <div class="bg-gradient-to-br from-islamic-cream to-white p-8 rounded-2xl shadow-xl">
+                        <h3 class="text-2xl font-bold text-islamic-navy mb-6">Send us a Message</h3>
+                        <form class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-islamic-navy font-semibold mb-2">First Name</label>
+                                    <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-islamic-green focus:border-transparent transition-all duration-300" placeholder="Your first name">
+                                </div>
+                                <div>
+                                    <label class="block text-islamic-navy font-semibold mb-2">Last Name</label>
+                                    <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-islamic-green focus:border-transparent transition-all duration-300" placeholder="Your last name">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-islamic-navy font-semibold mb-2">Email</label>
+                                <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-islamic-green focus:border-transparent transition-all duration-300" placeholder="your.email@example.com">
+                            </div>
+                            <div>
+                                <label class="block text-islamic-navy font-semibold mb-2">Subject</label>
+                                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-islamic-green focus:border-transparent transition-all duration-300">
+                                    <option>General Inquiry</option>
+                                    <option>Course Information</option>
+                                    <option>Technical Support</option>
+                                    <option>Partnership</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-islamic-navy font-semibold mb-2">Message</label>
+                                <textarea rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-islamic-green focus:border-transparent transition-all duration-300" placeholder="Tell us how we can help you..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-islamic-green hover:bg-islamic-navy text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div data-aos="fade-left">
+                    <div class="space-y-8">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-islamic-green rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-islamic-navy mb-2">Email Us</h4>
+                                <p class="text-gray-600">info@quranlearn.com</p>
+                                <p class="text-gray-600">support@quranlearn.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-islamic-green rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-islamic-navy mb-2">Call Us</h4>
+                                <p class="text-gray-600">+1 (555) 123-4567</p>
+                                <p class="text-gray-600">Available 24/7</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-islamic-green rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-islamic-navy mb-2">Visit Us</h4>
+                                <p class="text-gray-600">123 Education Street</p>
+                                <p class="text-gray-600">Islamic Center, IC 12345</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-islamic-green to-islamic-navy p-8 rounded-2xl text-white">
+                            <h4 class="text-xl font-semibold mb-4">Connect With Us</h4>
+                            <p class="mb-6 opacity-90">Follow us on social media for daily inspiration and updates.</p>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                                    </svg>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                                    </svg>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                    </svg>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-islamic-navy text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 bg-gradient-to-br from-islamic-green to-islamic-gold rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">ق</span>
+                        </div>
+                        <span class="text-2xl font-bold">QuranLearn</span>
+                    </div>
+                    <p class="text-white/80 leading-relaxed mb-6">
+                        Dedicated to making Quranic education accessible to Muslims worldwide through modern technology and traditional Islamic scholarship.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-islamic-green transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-islamic-green transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-islamic-green transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-islamic-green transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-white/80 hover:text-islamic-gold transition-colors">Home</a></li>
+                        <li><a href="#reading" class="text-white/80 hover:text-islamic-gold transition-colors">Quran Reading</a></li>
+                        <li><a href="#courses" class="text-white/80 hover:text-islamic-gold transition-colors">Online Courses</a></li>
+                        <li><a href="#tajweed" class="text-white/80 hover:text-islamic-gold transition-colors">Tajweed</a></li>
+                        <li><a href="#about" class="text-white/80 hover:text-islamic-gold transition-colors">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Courses -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Our Courses</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-white/80 hover:text-islamic-gold transition-colors">Quran Reading Basics</a></li>
+                        <li><a href="#" class="text-white/80 hover:text-islamic-gold transition-colors">Tajweed Mastery</a></li>
+                        <li><a href="#" class="text-white/80 hover:text-islamic-gold transition-colors">Quran Memorization</a></li>
+                        <li><a href="#" class="text-white/80 hover:text-islamic-gold transition-colors">Arabic Language</a></li>
+                        <li><a href="#" class="text-white/80 hover:text-islamic-gold transition-colors">Islamic Studies</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Contact Info</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-islamic-gold" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                            </svg>
+                            <span class="text-white/80">info@quranlearn.com</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-islamic-gold" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                            </svg>
+                            <span class="text-white/80">+1 (555) 123-4567</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-islamic-gold mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-white/80">123 Education Street<br>Islamic Center, IC 12345</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Footer -->
+            <div class="border-t border-white/20 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-white/60 mb-4 md:mb-0">
+                        <p>&copy; 2024 QuranLearn. All rights reserved.</p>
+                    </div>
+                    <div class="flex space-x-6 text-white/60">
+                        <a href="#" class="hover:text-islamic-gold transition-colors">Privacy Policy</a>
+                        <a href="#" class="hover:text-islamic-gold transition-colors">Terms of Service</a>
+                        <a href="#" class="hover:text-islamic-gold transition-colors">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
